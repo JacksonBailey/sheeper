@@ -1,5 +1,3 @@
-import org.springframework.boot.gradle.plugin.SpringBootPlugin
-
 plugins {
   id("org.springframework.boot") version "2.3.4.RELEASE"
 }
@@ -25,11 +23,14 @@ subprojects {
       useJUnitPlatform()
     }
     dependencies {
-      "implementation"(platform(SpringBootPlugin.BOM_COORDINATES))
-      "compileOnly"("org.projectlombok:lombok:1.18.12")
-      "annotationProcessor"("org.projectlombok:lombok:1.18.12")
-      "testCompileOnly"("org.projectlombok:lombok:1.18.12")
-      "testAnnotationProcessor"("org.projectlombok:lombok:1.18.12")
+      "implementation"(platform(project(":sheeper-internal-platform")))
+      "annotationProcessor"(platform(project(":sheeper-internal-platform")))
+      "testAnnotationProcessor"(platform(project(":sheeper-internal-platform")))
+
+      "compileOnly"("org.projectlombok:lombok")
+      "annotationProcessor"("org.projectlombok:lombok")
+      "testCompileOnly"("org.projectlombok:lombok")
+      "testAnnotationProcessor"("org.projectlombok:lombok")
     }
   }
 }
