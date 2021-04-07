@@ -1,5 +1,5 @@
 plugins {
-  id("org.springframework.boot") version "2.3.4.RELEASE"
+  id("org.springframework.boot") version "2.4.4"
 }
 
 allprojects {
@@ -14,8 +14,8 @@ subprojects {
 
   plugins.withType<JavaPlugin> {
     configure<JavaPluginExtension> {
-      sourceCompatibility = JavaVersion.VERSION_14
-      targetCompatibility = JavaVersion.VERSION_14
+      sourceCompatibility = JavaVersion.VERSION_16
+      targetCompatibility = JavaVersion.VERSION_16
       withSourcesJar()
     }
     tasks.named<Test>("test") {
@@ -23,13 +23,6 @@ subprojects {
     }
     dependencies {
       "implementation"(platform(project(":sheeper-internal-platform")))
-      "annotationProcessor"(platform(project(":sheeper-internal-platform")))
-      "testAnnotationProcessor"(platform(project(":sheeper-internal-platform")))
-
-      "compileOnly"("org.projectlombok:lombok")
-      "annotationProcessor"("org.projectlombok:lombok")
-      "testCompileOnly"("org.projectlombok:lombok")
-      "testAnnotationProcessor"("org.projectlombok:lombok")
     }
   }
 }

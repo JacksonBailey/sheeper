@@ -25,10 +25,10 @@ public class GreetingController {
     produces = MediaType.TEXT_PLAIN_VALUE)
   @ResponseBody
   public String greet(@RequestBody GreetingRequest request) {
-    if (request.isCowboy()) {
-      return cowboyGreeting.greet(request.getName());
+    if (request.cowboy()) {
+      return cowboyGreeting.greet(request.name());
     } else {
-      return everydayGreeting.greet(request.getName());
+      return everydayGreeting.greet(request.name());
     }
   }
 

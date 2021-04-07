@@ -29,10 +29,7 @@ public class GreetingControllerIT {
 
   @Test
   void testBoringGreeting() throws Exception {
-    GreetingRequest greetingRequest = GreetingRequest.builder()
-      .cowboy(false)
-      .name("Jackson")
-      .build();
+    GreetingRequest greetingRequest = new GreetingRequest("Jackson", false);
 
     mvc.perform(
       post("/greet")
@@ -46,10 +43,7 @@ public class GreetingControllerIT {
 
   @Test
   void testFunGreeting() throws Exception {
-    GreetingRequest greetingRequest = GreetingRequest.builder()
-      .cowboy(true)
-      .name("Jackson")
-      .build();
+    GreetingRequest greetingRequest = new GreetingRequest("Jackson", true);
 
     mvc.perform(
       post("/greet")

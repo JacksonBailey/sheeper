@@ -9,6 +9,6 @@ pluginManagement {
   plugins {
     id("nu.studer.jooq") version "5.1.1"
     id("org.flywaydb.flyway") version "7.0.2"
-    id("org.springframework.boot") version "2.3.4.RELEASE"
+    id("org.springframework.boot") version "2.4.4"
   }
 }
