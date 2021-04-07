@@ -12,9 +12,6 @@ dependencies {
 
   constraints {
     api(project(":sheeper-api"))
-    api(project(":sheeper-db"))
     api(project(":sheeper-server"))
-
-    api("org.xerial:sqlite-jdbc:3.32.3.2")
   }
 }
